@@ -46,13 +46,13 @@ def mining(block_name, transactions, previus_hash, cycles = maxsize):
 if __name__ == '__main__':
     previus_hash = "0000d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79"
     transactions = [Transaction("Dani","Alvaro","100 ₿"),
-                     Transaction("Julia","Alvaro","50 ₿"), 
-                     Transaction("Alvaro","Maria","25 ₿")]
+                     Transaction("Alvaro","Julia","50 ₿"), 
+                     Transaction("Julia","Maria","25 ₿")]
     
     start = time.time()
     mining("block_content_file", transactions, previus_hash, 1000000000)
     end = time.time()
 
-    print("Time mining: ", start-end)
+    print("Time mining: ", end-start)
 
 
