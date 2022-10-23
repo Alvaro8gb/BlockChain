@@ -4,10 +4,14 @@ import time
 
 from lib import Block, Transaction
 
-NUMBER_of_CHARACTER = 4 # 6 ->6
+NUMBER_of_CHARACTER = 4 # 6 -> 30 segs
 CHARACTER = '0'
 
 def good_hash(hash):
+    """
+    cheching if a hash meet some conditions
+    
+    """
 
     if str(hash[:NUMBER_of_CHARACTER]) == CHARACTER * NUMBER_of_CHARACTER :
         print('Found!')
@@ -15,7 +19,11 @@ def good_hash(hash):
     
     return False
     
-def mining(block_name, transactions,previus_hash, cycles = maxsize):
+def mining(block_name, transactions, previus_hash, cycles = maxsize):
+    """
+    Mining a block up to n cycles.
+    
+    """
         
     for nonce in range(cycles):
         
@@ -28,7 +36,7 @@ def mining(block_name, transactions,previus_hash, cycles = maxsize):
             print('Hash : ', hash)
             f = open(block_name ,'w', encoding="utf-8")
             print(block)
-            f.write(block,)
+            f.write(block)
             f.close()
             break
 
