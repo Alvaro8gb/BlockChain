@@ -10,7 +10,7 @@ CHARACTER = '0'
 def good_hash(hash):
     """
     cheching if a hash meet some conditions
-    
+
     """
 
     if str(hash[:NUMBER_of_CHARACTER]) == CHARACTER * NUMBER_of_CHARACTER :
@@ -42,14 +42,17 @@ def mining(block_name, transactions, previus_hash, cycles = maxsize):
 
     print("Not mine")
 
+
 if __name__ == '__main__':
     previus_hash = "0000d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79"
-    transactions = [Transaction("Dani","Alvaro","100 ₿"), Transaction("Julia","Alvaro","50 ₿"), Transaction("Alvaro","Maria","25 ₿")]
+    transactions = [Transaction("Dani","Alvaro","100 ₿"),
+                     Transaction("Julia","Alvaro","50 ₿"), 
+                     Transaction("Alvaro","Maria","25 ₿")]
     
-    inicio = time.time()
-    mining("block_1", transactions, previus_hash, 1000000000)
-    fin = time.time()
+    start = time.time()
+    mining("block_content_file", transactions, previus_hash, 1000000000)
+    end = time.time()
 
-    print("Time mining: ", fin-inicio)
+    print("Time mining: ", start-end)
 
 
